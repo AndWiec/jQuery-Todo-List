@@ -1,0 +1,109 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    //source google fonts
+    font-family: 'Roboto', sans-serif;
+    font-size: 10px;
+    //source: uigradients.com
+    background: #2BC0E4;  //fallback for old browsers
+    background: -webkit-linear-gradient(to right, #EAECC6, #2BC0E4);  //Chrome 10-25, Safari 5.1-6
+    background: linear-gradient(to right, #EAECC6, #2BC0E4); //W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+
+}
+
+#todo__list {
+    box-shadow: 0 0 3px rgba(0, 0, 0, .3);
+    width: 35em;
+    margin: 10em auto;
+    background-color: #f7f7ff;
+    header {
+        width: 100%;
+        vertical-align: middle;
+        background-color: #2980b9;
+        img {
+            width: 10em;
+            vertical-align: middle;
+        }
+        h1 {
+            width: 55%;
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 2.4em;
+            font-weight: normal;
+            padding: .5em 1em;
+            color: whitesmoke;
+            text-transform: uppercase;
+        }
+        .icon-plus {
+            float: right;
+        }
+    }
+    .completed {
+        text-decoration: line-through;
+        color: gray;
+    }
+    input {
+        display: none;
+        font-size: 1.7em;
+        background-color: #f7f7f7;
+        color: #2980b9;
+        width: 100%;
+        border: .1em solid rgba(0, 0, 0, .0);
+        padding: .4em;
+        height: 3em;
+        line-height: 3em;
+        box-sizing: border-box;
+        &:focus{
+            background-color: #fff;
+            border: .1em solid #2980b9;
+            outline: none;
+        }
+    }
+    ul {
+        list-style-type: none;
+        li {
+            height: 3em;
+            background-color: white;
+            line-height: 3em;
+            font-size: 1.7em;
+            color: #474747;
+            position: relative;
+            text-transform: capitalize;
+            &::after {
+                content: '';
+                display: flexbox;
+                height: .1em;
+                background-color: black;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0%;
+                padding-left: 0em;
+                transition: all ease-in-out 450ms;
+            }
+            &:hover::after {
+                width: 100%;
+            }
+            &:hover span {
+                width: 4em;
+                opacity: 1;
+            }
+            span {
+                background-color: #e74c3c;
+                height: 100%;
+                margin-right: 2em;
+                text-align: center;
+                color: white;
+                width: 0;
+                display: inline-block;
+                opacity: 0;
+                transition: .2s linear;
+            }
+        }
+        li:nth-child(2n){
+            background-color: #f7f7f7;
+        }
+    }
+}
