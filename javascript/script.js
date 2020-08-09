@@ -13,7 +13,7 @@ $("ul").on("click", "span", function (event) {
 
 //Add a new todo
 $('input[type="text"]').keypress(function(e){
-    if(e.which ===13){
+    if(e.which === 13){
         let todoText = $(this).val();
         $(this).val("");
         //Create new li and add it to the ul
